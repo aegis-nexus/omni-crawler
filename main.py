@@ -3,7 +3,7 @@ import logging
 import os
 from datetime import datetime
 import config
-from crawlers import zhihu
+from crawlers import zhihu, weibo, baidu, reddit
 
 # Setup Logging
 log_filename = os.path.join(config.LOG_DIR, f"crawler_{datetime.now().strftime('%Y-%m-%d')}.log")
@@ -31,7 +31,10 @@ def main():
     logger.info("--- Starting Omni-Crawler Session ---")
     
     platforms = [
-        {"name": "zhihu", "module": zhihu}
+        {"name": "zhihu", "module": zhihu},
+        {"name": "weibo", "module": weibo},
+        {"name": "baidu", "module": baidu},
+        {"name": "reddit", "module": reddit}
     ]
     
     for platform in platforms:
