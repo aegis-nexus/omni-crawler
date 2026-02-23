@@ -25,11 +25,14 @@ def fetch():
             
             if title_el:
                 repo_path = title_el.get('href', '').strip('/')
+                footer_el = article.select_one('div.f6.color-fg-muted')
+                # Fixed: Use double backslash for literal newline character in replace
+                raw_score = footer_el.text.strip() if footer_el else "N/A"
+                score_text = " ".join(raw_score.split())
                 results.append({
                     "title": repo_path,
                     "url": f"https://github.com/{repo_path}",
-                    "hot_score": article.select_one('div.f6.color-fg-muted').text.strip().split('
-')[0] if article.select_one('div.f6.color-fg-muted') else "N/A",
+                    "hot_score": score_text,
                     "excerpt": desc_el.text.strip() if desc_el else ""
                 })
                 
