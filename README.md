@@ -1,30 +1,29 @@
-# Project: Omni-Crawler - Multi-Platform Hot Ranking Aggregator
+# Omni-Crawler: Global Hot-Ranking Aggregator
 
-Universal hot-ranking crawler for global social media and news platforms. Built for modularity and maintainability.
+A professional-grade, modular crawler system designed to track real-time hot rankings across 11 major global platforms. Built for long-term data persistence and analytical rigor.
 
-## 🚀 Supported Platforms
-- **Zhihu (知乎)**: Real-time hot questions via public search API.
-- **Weibo (微博)**: Real-time hot search list via mobile container API.
-- **Baidu (百度)**: Real-time top search board via web scraping.
-- **Reddit**: Worldwide hot threads from r/all via .json endpoint.
+## 🚀 Supported Platforms (11)
+- **Comprehensive**: Weibo (微博), Baidu (百度), Toutiao (今日头条), 36Kr (36氪)
+- **Tech/Geek**: GitHub Trending, Hacker News, V2EX, ITHome (IT之家)
+- **Community/Video**: Bilibili (哔哩哔哩), Reddit (Global), Zhihu (知乎)
 
-## 🛠️ Project Structure
+## 🛠️ Engineering Features
+- **Modular Architecture**: Decoupled orchestrator (`main.py`) and platform scrapers (`crawlers/`).
+- **Industrial Storage**: Monthly rotated **SQLite** databases for long-term stability.
+- **Atomic De-duplication**: Per-item MD5 hashing to prevent redundant records while tracking trend fluctuations.
+- **Bilingual Core**: Designed for both English and Chinese data processing.
+
+## 📦 Project Structure
 - `main.py`: Central orchestrator and scheduler.
-- `config.py`: Environment-based configuration.
+- `storage.py`: SQLite persistence layer with de-duplication logic.
+- `config.py`: Environment-based configuration (.env support).
 - `crawlers/`: Individual platform scraper modules.
-- `data/`: JSON data storage (time-stamped).
-- `logs/`: Detailed execution logs.
+- `data/db/`: Monthly SQLite databases (`YYYY-MM.sqlite`).
+- `logs/`: Standardized execution logs.
 
-## 📦 Requirements
-- Python 3.12+
-- `requests`
-- `python-dotenv`
-
-## ⚙️ Usage
-Run the aggregator:
-```bash
-python3 main.py
-```
+## ⚙️ Quick Start
+1. Install dependencies: `pip install -r requirements.txt`
+2. Run the aggregator: `python3 main.py`
 
 ---
-*Maintained by Aegis-Nexus*
+*Maintained by Aegis-Nexus // Managed by Lsland*

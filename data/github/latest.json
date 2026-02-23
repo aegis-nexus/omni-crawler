@@ -1,0 +1,56 @@
+[
+  {
+    "title": "huggingface/skills",
+    "url": "https://github.com/huggingface/skills",
+    "hot_score": "Python 3,300 223 Built by 364 stars today",
+    "excerpt": ""
+  },
+  {
+    "title": "vxcontrol/pentagi",
+    "url": "https://github.com/vxcontrol/pentagi",
+    "hot_score": "Go 7,669 865 Built by 1,579 stars today",
+    "excerpt": "✨ Fully autonomous AI Agents system capable of performing complex penetration testing tasks"
+  },
+  {
+    "title": "anthropics/claude-code",
+    "url": "https://github.com/anthropics/claude-code",
+    "hot_score": "Shell 69,216 5,434 Built by 503 stars today",
+    "excerpt": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands."
+  },
+  {
+    "title": "x1xhlol/system-prompts-and-models-of-ai-tools",
+    "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
+    "hot_score": "118,572 30,810 Built by 1,134 stars today",
+    "excerpt": "FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, VSCode Agent, Warp.dev, Windsurf, Xcode, Z.ai Code, Dia & v0. (And other Open Sourced) System Prompts, Internal Tools & AI Models"
+  },
+  {
+    "title": "Stremio/stremio-web",
+    "url": "https://github.com/Stremio/stremio-web",
+    "hot_score": "JavaScript 9,811 1,073 Built by 247 stars today",
+    "excerpt": "Stremio - Freedom to Stream"
+  },
+  {
+    "title": "OpenBB-finance/OpenBB",
+    "url": "https://github.com/OpenBB-finance/OpenBB",
+    "hot_score": "Python 61,192 5,968 Built by 188 stars today",
+    "excerpt": "Financial data platform for analysts, quants and AI agents."
+  },
+  {
+    "title": "cloudflare/agents",
+    "url": "https://github.com/cloudflare/agents",
+    "hot_score": "TypeScript 3,863 413 Built by 257 stars today",
+    "excerpt": "Build and deploy AI Agents on Cloudflare"
+  },
+  {
+    "title": "abhigyanpatwari/GitNexus",
+    "url": "https://github.com/abhigyanpatwari/GitNexus",
+    "hot_score": "TypeScript 1,688 130 Built by 424 stars today",
+    "excerpt": "GitNexus: The Zero-Server Code Intelligence Engine - GitNexus is a client-side knowledge graph creator that runs entirely in your browser. Drop in a GitHub repo or ZIP file, and get an interactive knowledge graph wit a built in Graph RAG Agent. Perfect for code exploration"
+  },
+  {
+    "title": "stan-smith/FossFLOW",
+    "url": "https://github.com/stan-smith/FossFLOW",
+    "hot_score": "TypeScript 18,344 1,185 Built by 340 stars today",
+    "excerpt": "Make beautiful isometric infrastructure diagrams"
+  }
+]

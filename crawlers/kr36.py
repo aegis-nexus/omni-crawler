@@ -6,41 +6,38 @@ import re
 logger = logging.getLogger("OmniCrawler.36Kr")
 
 def fetch():
-    """Fetches 36Kr newsflashes (快讯)."""
     url = "https://36kr.com/newsflashes"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
     }
-    
     try:
         response = requests.get(url, headers=headers, timeout=10)
         response.raise_for_status()
+        match = re.search(r'window.initialState=(.*?)</script>', response.text)
+        if not match: return []
         
-        # 36Kr also embeds state in a window.initialState script tag
-        pattern = re.compile(r'window.initialState=(.*?)</script>')
-        match = pattern.search(response.text)
+        json_str = match.group(1).strip()
+        if json_str.endswith(';'): json_str = json_str[:-1]
+        state = json.loads(json_str)
         
-        if not match:
-            logger.error("Could not find initialState in 36Kr")
-            return []
+        # 2026 Path extraction
+        items = []
+        try:
+            # Path can vary, trying common nested structures
+            raw_list = state.get('newsflashCatalogData', {}).get('data', {}).get('newsflashList', {}).get('data', {}).get('itemList', [])
+            if not raw_list:
+                raw_list = state.get('newsflashCatalogData', {}).get('newsflashList', {}).get('itemList', [])
             
-        state = json.loads(match.group(1))
-        # Navigate the nested state to find newsflashes
-        # Path: newsflashCatalogData -> data -> newsflashList
-        flashes = state.get('newsflashCatalogData', {}).get('data', {}).get('newsflashList', [])
-        
-        results = []
-        for item in flashes:
-            content_data = item.get('templateMaterial', {})
-            results.append({
-                "title": content_data.get('widgetTitle', ''),
-                "url": f"https://36kr.com/newsflashes/{item.get('itemId')}",
-                "hot_score": "Recent",
-                "excerpt": content_data.get('widgetContent', '')[:200]
-            })
-            
-        logger.info(f"Retrieved {len(results)} items from 36Kr")
-        return results
+            for item in raw_list:
+                m = item.get('templateMaterial', {})
+                items.append({
+                    "title": m.get('widgetTitle'),
+                    "url": f"https://36kr.com/newsflashes/{item.get('itemId')}",
+                    "hot_score": "Recent",
+                    "excerpt": m.get('widgetContent', '')[:200]
+                })
+        except: pass
+        return items
     except Exception as e:
-        logger.error(f"Error fetching 36Kr: {e}")
+        logger.error(f"36Kr Error: {e}")
         return []

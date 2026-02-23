@@ -1,38 +1,31 @@
 import requests
 import logging
-from bs4 import BeautifulSoup
+import json
 
 logger = logging.getLogger("OmniCrawler.ITHome")
 
 def fetch():
-    """Fetches ITHome hot news."""
-    url = "https://www.ithome.com/"
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-    }
+    """Uses a more stable third-party or mobile-mimic interface for ITHome."""
+    # IT之家 PC 首页现在异步加载较多，尝试一个更直接的 API 节点（聚合 API 往往更稳）
+    url = "https://api.98dou.cn/api/hotlist/ithome"
+    headers = {"User-Agent": "AegisNexus/1.0"}
     
     try:
         response = requests.get(url, headers=headers, timeout=10)
         response.raise_for_status()
-        soup = BeautifulSoup(response.text, 'html.parser')
+        data = response.json()
         
-        # Target the 'hot news' list on the sidebar/content
-        # Structure: <ul class="rank-list"> or similar
-        items = soup.select('.lst-2 li') # Daily hot list class
-        
+        # Standard aggregation API format: {code: 200, data: [...]}
+        raw_items = data.get('data', [])
         results = []
-        for item in items:
-            link_el = item.select_one('a')
-            if link_el:
-                results.append({
-                    "title": link_el.text.strip(),
-                    "url": link_el.get('href', ''),
-                    "hot_score": "Hot",
-                    "excerpt": ""
-                })
-                
-        logger.info(f"Retrieved {len(results)} items from ITHome")
+        for item in raw_items:
+            results.append({
+                "title": item.get('title'),
+                "url": item.get('url'),
+                "hot_score": item.get('hot_score', 'Hot'),
+                "excerpt": ""
+            })
         return results
     except Exception as e:
-        logger.error(f"Error fetching ITHome: {e}")
+        logger.error(f"ITHome Error: {e}")
         return []

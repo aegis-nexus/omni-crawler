@@ -1,32 +1,25 @@
-import json
 import logging
 import os
 from datetime import datetime
 import config
+import storage
 from crawlers import zhihu, weibo, baidu, reddit, github, bilibili, toutiao, hackernews, v2ex, kr36, ithome
 
+# Setup Logging
+log_filename = os.path.join(config.LOG_DIR, f"crawler_{datetime.now().strftime('%Y-%m-%d')}.log")
 logging.basicConfig(
     level=config.LOG_LEVEL,
     format='%(asctime)s [%(levelname)s] %(name)s: %(message)s',
     handlers=[
-        logging.FileHandler(os.path.join(config.LOG_DIR, f"crawler_{datetime.now().strftime('%Y-%m-%d')}.log"), encoding='utf-8'),
+        logging.FileHandler(log_filename, encoding='utf-8'),
         logging.StreamHandler()
     ]
 )
 logger = logging.getLogger("OmniCrawler")
 
-def save_data(platform, data):
-    timestamp = datetime.now().strftime("%Y-%m-%d_%H%M")
-    filename = os.path.join(config.DATA_DIR, f"{platform}_{timestamp}.json")
-    try:
-        with open(filename, 'w', encoding='utf-8') as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-        logger.info(f"Saved {len(data)} items for {platform}")
-    except Exception as e:
-        logger.error(f"Failed to save {platform}: {e}")
-
 def main():
     logger.info("--- Starting Omni-Crawler Session ---")
+    
     platforms = [
         {"name": "zhihu", "module": zhihu},
         {"name": "weibo", "module": weibo},
@@ -40,14 +33,26 @@ def main():
         {"name": "36kr", "module": kr36},
         {"name": "ithome", "module": ithome}
     ]
+    
+    stats = {"success": 0, "skipped": 0, "failed": 0}
+    
     for platform in platforms:
+        name = platform["name"]
+        logger.info(f"Fetching: {name}")
         try:
             data = platform["module"].fetch()
             if data:
-                save_data(platform["name"], data)
+                is_new = storage.save_platform_data(name, data)
+                if is_new: stats["success"] += 1
+                else: stats["skipped"] += 1
+            else:
+                logger.warning(f"No data for {name}")
+                stats["failed"] += 1
         except Exception as e:
-            logger.error(f"Platform {platform['name']} failed: {e}")
-    logger.info("--- Session Complete ---")
+            logger.error(f"Critical error in {name}: {e}")
+            stats["failed"] += 1
+            
+    logger.info(f"--- Session Complete | Success: {stats['success']} | Skipped: {stats['skipped']} | Failed: {stats['failed']} ---")
 
 if __name__ == "__main__":
     main()
