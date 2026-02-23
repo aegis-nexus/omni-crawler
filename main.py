@@ -37,7 +37,6 @@ def run_crawler(name):
     logger.info(f"--- Executing: {name} ---")
     try:
         data = module.fetch()
-        # Data Quality Check
         if not data:
             raise ValueError("Empty data retrieved")
         
