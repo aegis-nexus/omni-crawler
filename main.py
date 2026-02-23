@@ -37,15 +37,15 @@ def run_crawler(name):
     logger.info(f"--- Executing: {name} ---")
     try:
         data = module.fetch()
-        # Data Quality Check: Fail if data is empty or URL missing rate > 50%
+        # Data Quality Check
         if not data:
             raise ValueError("Empty data retrieved")
         
         missing_urls = sum(1 for item in data if not item.get('url'))
-        if missing_urls / len(data) > 0.5:
+        if len(data) > 0 and (missing_urls / len(data)) > 0.5:
             raise ValueError(f"High URL missing rate: {missing_urls}/{len(data)}")
             
-        success = storage.save_platform_data(name, data)
+        storage.save_platform_data(name, data)
         status_manager.update_platform_status(name, True)
         logger.info(f"--- Success: {name} ---")
     except Exception as e:
@@ -66,8 +66,8 @@ def main():
         print("
 --- Omni-Crawler Health Report ---")
         for p, info in status.items():
-            color = "OK" if info['status'] == 'HEALTHY' else "!!"
-            print(f"[{color}] {p:12} | Status: {info['status']:8} | Fails: {info['consecutive_failures']} | Last: {info['last_run']}")
+            indicator = "OK" if info['status'] == 'HEALTHY' else "!!"
+            print(f"[{indicator}] {p:12} | Status: {info['status']:8} | Fails: {info['consecutive_failures']} | Last: {info['last_run']}")
         return
 
     if args.reset:
@@ -80,7 +80,7 @@ def main():
     if args.platform:
         run_crawler(args.platform)
     elif args.all:
-        for name in PLATFORMS.keys():
+        for name in sorted(PLATFORMS.keys()):
             run_crawler(name)
     else:
         parser.print_help()
