@@ -12,7 +12,6 @@ A professional-grade, CLI-driven crawler system designed for multi-platform hot 
 
 ### 1. Unified JSON Interface
 The system is designed to be called by external schedulers (e.g., Cron, Custom Managers). It outputs a pure JSON response to `stdout`:
-- **code**: 0 (Success), 1 (Quality/Logic Failure), 2 (Script Error).
 - **message**: Descriptive status or error details.
 - **data**: The captured hot-list items (array of objects with `title`, `url`, `hot_score`, `excerpt`).
 

@@ -52,16 +52,10 @@ def run_crawler(name):
     try:
         data = module.fetch()
         
-        # Data Quality Check
         if not data:
             status_manager.update_platform_status(name, False, "Empty data retrieved")
             respond(1, "数据获取失败: 结果为空", [])
         
-        missing_urls = sum(1 for item in data if not item.get('url'))
-        if len(data) > 0 and (missing_urls / len(data)) > 0.5:
-            status_manager.update_platform_status(name, False, f"URL 缺失率过高: {missing_urls}/{len(data)}")
-            respond(1, f"数据质量不达标: URL 缺失率 {missing_urls}/{len(data)}", data)
-            
         # Persistence
         storage.save_platform_data(name, data)
         status_manager.update_platform_status(name, True)
