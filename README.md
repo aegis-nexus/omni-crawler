@@ -39,17 +39,35 @@ pip install requests beautifulsoup4 python-dotenv
 ```
 
 ### Execution
+Pass the platform slug to the `--platform` argument.
+
+#### Available Platforms
+| Slug | Platform Name | Category |
+| :--- | :--- | :--- |
+| `baidu` | Baidu (百度) | General News |
+| `weibo` | Weibo (微博) | Social Media |
+| `toutiao` | Toutiao (今日头条) | General News |
+| `zhihu` | Zhihu (知乎) | Q&A Community |
+| `36kr` | 36Kr (36氪) | Business/Tech |
+| `ithome` | ITHome (IT之家) | Tech News |
+| `bilibili` | Bilibili (哔哩哔哩) | Video/ACG |
+| `v2ex` | V2EX | Tech Community |
+| `github` | GitHub Trending | Open Source |
+| `hackernews` | Hacker News | Tech/Startup |
+| `reddit` | Reddit (r/all) | Global Hot |
+
+#### Commands
 ```bash
-# Run a specific platform
+# Run a specific platform (e.g., Baidu)
 python3 main.py --platform baidu
 
-# Run all platforms
+# Run all platforms at once
 python3 main.py --all
 
-# Check system health
+# Inspect system health and error counts
 python3 main.py --status
 
-# Manually reset a failed platform
+# Reset a platform status after manual fix
 python3 main.py --reset baidu
 ```
 
