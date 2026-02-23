@@ -1,0 +1,70 @@
+2026-02-23 11:01:56,685 [INFO] OmniCrawler: --- Starting Omni-Crawler Session ---
+2026-02-23 11:01:56,686 [INFO] OmniCrawler: Fetching: zhihu
+2026-02-23 11:01:56,836 [WARNING] OmniCrawler.Zhihu: Zhihu Main API requires auth, falling back to search API
+2026-02-23 11:01:57,118 [INFO] OmniCrawler.Zhihu: Retrieved 10 items from Zhihu
+2026-02-23 11:01:57,121 [INFO] OmniCrawler.Storage: No changes detected for zhihu. Database untouched.
+2026-02-23 11:01:57,121 [INFO] OmniCrawler: Fetching: weibo
+2026-02-23 11:01:57,345 [INFO] OmniCrawler.Weibo: Retrieved 51 items from Weibo
+2026-02-23 11:01:57,351 [INFO] OmniCrawler.Storage: Saved 50 new/updated items for weibo to data/db/2026-02.sqlite
+2026-02-23 11:01:57,352 [INFO] OmniCrawler: Fetching: baidu
+2026-02-23 11:01:57,674 [INFO] OmniCrawler.Baidu: Retrieved 51 items from Baidu
+2026-02-23 11:01:57,680 [INFO] OmniCrawler.Storage: Saved 51 new/updated items for baidu to data/db/2026-02.sqlite
+2026-02-23 11:01:57,680 [INFO] OmniCrawler: Fetching: reddit
+2026-02-23 11:01:59,720 [INFO] OmniCrawler.Reddit: Retrieved 25 items from Reddit
+2026-02-23 11:01:59,725 [INFO] OmniCrawler.Storage: Saved 25 new/updated items for reddit to data/db/2026-02.sqlite
+2026-02-23 11:01:59,725 [INFO] OmniCrawler: Fetching: github
+2026-02-23 11:02:01,553 [INFO] OmniCrawler.GitHub: Retrieved 14 items from GitHub Trending
+2026-02-23 11:02:01,561 [INFO] OmniCrawler.Storage: Saved 13 new/updated items for github to data/db/2026-02.sqlite
+2026-02-23 11:02:01,561 [INFO] OmniCrawler: Fetching: bilibili
+2026-02-23 11:02:01,699 [INFO] OmniCrawler.Bilibili: Retrieved 20 items from Bilibili
+2026-02-23 11:02:01,704 [INFO] OmniCrawler.Storage: Saved 20 new/updated items for bilibili to data/db/2026-02.sqlite
+2026-02-23 11:02:01,704 [INFO] OmniCrawler: Fetching: toutiao
+2026-02-23 11:02:01,990 [INFO] OmniCrawler.Toutiao: Retrieved 50 items from Toutiao
+2026-02-23 11:02:01,996 [INFO] OmniCrawler.Storage: Saved 50 new/updated items for toutiao to data/db/2026-02.sqlite
+2026-02-23 11:02:01,996 [INFO] OmniCrawler: Fetching: hackernews
+2026-02-23 11:02:16,576 [INFO] OmniCrawler.HackerNews: Retrieved 20 items from Hacker News
+2026-02-23 11:02:16,584 [INFO] OmniCrawler.Storage: Saved 17 new/updated items for hackernews to data/db/2026-02.sqlite
+2026-02-23 11:02:16,584 [INFO] OmniCrawler: Fetching: v2ex
+2026-02-23 11:02:16,933 [INFO] OmniCrawler.V2EX: Retrieved 9 items from V2EX
+2026-02-23 11:02:16,938 [INFO] OmniCrawler.Storage: Saved 3 new/updated items for v2ex to data/db/2026-02.sqlite
+2026-02-23 11:02:16,938 [INFO] OmniCrawler: Fetching: 36kr
+2026-02-23 11:02:17,343 [INFO] OmniCrawler.Storage: No changes detected for 36kr. Database untouched.
+2026-02-23 11:02:17,343 [INFO] OmniCrawler: Fetching: ithome
+2026-02-23 11:02:17,608 [INFO] OmniCrawler.ITHome: Retrieved 50 items from ITHome
+2026-02-23 11:02:17,616 [INFO] OmniCrawler.Storage: Saved 50 new/updated items for ithome to data/db/2026-02.sqlite
+2026-02-23 11:02:17,617 [INFO] OmniCrawler: --- Session Complete | Success: 9 | Skipped: 2 | Failed: 0 ---
+2026-02-23 11:07:43,235 [INFO] OmniCrawler: --- Starting Omni-Crawler Session ---
+2026-02-23 11:07:43,235 [INFO] OmniCrawler: Fetching: zhihu
+2026-02-23 11:07:43,384 [WARNING] OmniCrawler.Zhihu: Zhihu Main API requires auth, falling back to search API
+2026-02-23 11:07:43,677 [INFO] OmniCrawler.Zhihu: Retrieved 10 items from Zhihu
+2026-02-23 11:07:43,680 [INFO] OmniCrawler.Storage: No changes detected for zhihu. Database untouched.
+2026-02-23 11:07:43,680 [INFO] OmniCrawler: Fetching: weibo
+2026-02-23 11:07:43,920 [INFO] OmniCrawler.Weibo: Retrieved 51 items from Weibo
+2026-02-23 11:07:43,928 [INFO] OmniCrawler.Storage: Saved 50 new/updated items for weibo to data/db/2026-02.sqlite
+2026-02-23 11:07:43,928 [INFO] OmniCrawler: Fetching: baidu
+2026-02-23 11:07:44,254 [INFO] OmniCrawler.Baidu: Retrieved 51 items from Baidu
+2026-02-23 11:07:44,261 [INFO] OmniCrawler.Storage: Saved 51 new/updated items for baidu to data/db/2026-02.sqlite
+2026-02-23 11:07:44,261 [INFO] OmniCrawler: Fetching: reddit
+2026-02-23 11:07:45,709 [INFO] OmniCrawler.Reddit: Retrieved 25 items from Reddit
+2026-02-23 11:07:45,715 [INFO] OmniCrawler.Storage: Saved 25 new/updated items for reddit to data/db/2026-02.sqlite
+2026-02-23 11:07:45,716 [INFO] OmniCrawler: Fetching: github
+2026-02-23 11:07:48,066 [INFO] OmniCrawler.GitHub: Retrieved 14 items from GitHub Trending
+2026-02-23 11:07:48,072 [INFO] OmniCrawler.Storage: Saved 12 new/updated items for github to data/db/2026-02.sqlite
+2026-02-23 11:07:48,072 [INFO] OmniCrawler: Fetching: bilibili
+2026-02-23 11:07:48,174 [INFO] OmniCrawler.Bilibili: Retrieved 20 items from Bilibili
+2026-02-23 11:07:48,179 [INFO] OmniCrawler.Storage: Saved 20 new/updated items for bilibili to data/db/2026-02.sqlite
+2026-02-23 11:07:48,179 [INFO] OmniCrawler: Fetching: toutiao
+2026-02-23 11:07:48,380 [INFO] OmniCrawler.Toutiao: Retrieved 50 items from Toutiao
+2026-02-23 11:07:48,386 [INFO] OmniCrawler.Storage: Saved 50 new/updated items for toutiao to data/db/2026-02.sqlite
+2026-02-23 11:07:48,386 [INFO] OmniCrawler: Fetching: hackernews
+2026-02-23 11:08:02,357 [INFO] OmniCrawler.HackerNews: Retrieved 20 items from Hacker News
+2026-02-23 11:08:02,364 [INFO] OmniCrawler.Storage: Saved 12 new/updated items for hackernews to data/db/2026-02.sqlite
+2026-02-23 11:08:02,364 [INFO] OmniCrawler: Fetching: v2ex
+2026-02-23 11:08:02,776 [INFO] OmniCrawler.V2EX: Retrieved 9 items from V2EX
+2026-02-23 11:08:02,779 [INFO] OmniCrawler.Storage: No changes detected for v2ex. Database untouched.
+2026-02-23 11:08:02,779 [INFO] OmniCrawler: Fetching: 36kr
+2026-02-23 11:08:03,228 [INFO] OmniCrawler.Storage: No changes detected for 36kr. Database untouched.
+2026-02-23 11:08:03,228 [INFO] OmniCrawler: Fetching: ithome
+2026-02-23 11:08:03,816 [INFO] OmniCrawler.ITHome: Retrieved 50 items from ITHome
+2026-02-23 11:08:03,823 [INFO] OmniCrawler.Storage: Saved 50 new/updated items for ithome to data/db/2026-02.sqlite
+2026-02-23 11:08:03,823 [INFO] OmniCrawler: --- Session Complete | Success: 8 | Skipped: 3 | Failed: 0 ---
