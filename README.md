@@ -1,3 +1,4 @@
+[English](README.md) | [简体中文](README_ZH.md)
 # Omni-Crawler: Global Hot-Ranking Aggregator
 
 A professional-grade, CLI-driven crawler system designed for multi-platform hot ranking aggregation. Built with a focus on long-term data persistence, robust health management, and seamless external integration.
