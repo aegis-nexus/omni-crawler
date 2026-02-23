@@ -4,3 +4,54 @@
 2026-02-23 09:29:20,060 [INFO] OmniCrawler: Successfully saved 10 items for zhihu to data/zhihu_2026-02-23_0929.json
 2026-02-23 09:29:20,060 [INFO] OmniCrawler: Top entry for zhihu: 妈祖被替小女孩回应
 2026-02-23 09:29:20,060 [INFO] OmniCrawler: --- Omni-Crawler Session Complete ---
+2026-02-23 09:30:37,679 [INFO] OmniCrawler: --- Starting Omni-Crawler Session ---
+2026-02-23 09:30:37,679 [INFO] OmniCrawler: Executing crawler for: zhihu
+2026-02-23 09:30:37,883 [INFO] OmniCrawler.Zhihu: Retrieved 10 items from Zhihu
+2026-02-23 09:30:37,885 [INFO] OmniCrawler: Successfully saved 10 items for zhihu to data/zhihu_2026-02-23_0930.json
+2026-02-23 09:30:37,885 [INFO] OmniCrawler: Top entry for zhihu: 多地气温断崖式下跌
+2026-02-23 09:30:37,885 [INFO] OmniCrawler: Executing crawler for: weibo
+2026-02-23 09:30:38,023 [ERROR] OmniCrawler.Weibo: Error fetching Weibo: 432 Client Error:  for url: https://m.weibo.cn/api/container/getIndex?containerid=106003type%3D25%26t%3D3%26disable_hot%3D1%26filter_type%3Drealtime
+2026-02-23 09:30:38,025 [WARNING] OmniCrawler: No data retrieved for weibo
+2026-02-23 09:30:38,025 [INFO] OmniCrawler: Executing crawler for: baidu
+2026-02-23 09:30:38,254 [INFO] OmniCrawler.Baidu: Retrieved 0 items from Baidu
+2026-02-23 09:30:38,256 [WARNING] OmniCrawler: No data retrieved for baidu
+2026-02-23 09:30:38,256 [INFO] OmniCrawler: Executing crawler for: reddit
+2026-02-23 09:30:39,309 [INFO] OmniCrawler.Reddit: Retrieved 25 items from Reddit
+2026-02-23 09:30:39,311 [INFO] OmniCrawler: Successfully saved 25 items for reddit to data/reddit_2026-02-23_0930.json
+2026-02-23 09:30:39,311 [INFO] OmniCrawler: Top entry for reddit: Punch stood up for himself against a monkey that had been bullying him
+2026-02-23 09:30:39,311 [INFO] OmniCrawler: --- Omni-Crawler Session Complete ---
+2026-02-23 09:33:33,233 [INFO] OmniCrawler: --- Starting Omni-Crawler Session ---
+2026-02-23 09:33:33,234 [INFO] OmniCrawler: Executing crawler for: zhihu
+2026-02-23 09:33:33,384 [ERROR] OmniCrawler.Zhihu: Error fetching Zhihu: 401 Client Error: Authorization Required for url: https://www.zhihu.com/api/v3/feed/topstory/hot-lists/total?limit=50&desktop=true
+2026-02-23 09:33:33,386 [WARNING] OmniCrawler: No data retrieved for zhihu
+2026-02-23 09:33:33,386 [INFO] OmniCrawler: Executing crawler for: weibo
+2026-02-23 09:33:33,694 [INFO] OmniCrawler.Weibo: Retrieved 0 items from Weibo
+2026-02-23 09:33:33,696 [WARNING] OmniCrawler: No data retrieved for weibo
+2026-02-23 09:33:33,697 [INFO] OmniCrawler: Executing crawler for: baidu
+2026-02-23 09:33:33,993 [INFO] OmniCrawler.Baidu: Retrieved 51 items from Baidu
+2026-02-23 09:33:33,995 [INFO] OmniCrawler: Successfully saved 51 items for baidu to data/baidu_2026-02-23_0933.json
+2026-02-23 09:33:33,995 [INFO] OmniCrawler: Top entry for baidu: 习近平致电祝贺金正恩
+2026-02-23 09:33:33,995 [INFO] OmniCrawler: Executing crawler for: reddit
+2026-02-23 09:33:34,756 [INFO] OmniCrawler.Reddit: Retrieved 25 items from Reddit
+2026-02-23 09:33:34,758 [INFO] OmniCrawler: Successfully saved 25 items for reddit to data/reddit_2026-02-23_0933.json
+2026-02-23 09:33:34,758 [INFO] OmniCrawler: Top entry for reddit: Punch stood up for himself against a monkey that had been bullying him
+2026-02-23 09:33:34,758 [INFO] OmniCrawler: --- Omni-Crawler Session Complete ---
+2026-02-23 09:33:57,022 [INFO] OmniCrawler: --- Starting Omni-Crawler Session ---
+2026-02-23 09:33:57,022 [INFO] OmniCrawler: Executing crawler for: zhihu
+2026-02-23 09:33:57,201 [WARNING] OmniCrawler.Zhihu: Zhihu Main API requires auth, falling back to search API
+2026-02-23 09:33:57,501 [INFO] OmniCrawler.Zhihu: Retrieved 10 items from Zhihu
+2026-02-23 09:33:57,503 [INFO] OmniCrawler: Successfully saved 10 items for zhihu to data/zhihu_2026-02-23_0933.json
+2026-02-23 09:33:57,504 [INFO] OmniCrawler: Top entry for zhihu: 多地气温断崖式下跌
+2026-02-23 09:33:57,504 [INFO] OmniCrawler: Executing crawler for: weibo
+2026-02-23 09:33:57,756 [INFO] OmniCrawler.Weibo: Retrieved 51 items from Weibo
+2026-02-23 09:33:57,761 [INFO] OmniCrawler: Successfully saved 51 items for weibo to data/weibo_2026-02-23_0933.json
+2026-02-23 09:33:57,762 [INFO] OmniCrawler: Top entry for weibo: 习近平致电祝贺金正恩
+2026-02-23 09:33:57,762 [INFO] OmniCrawler: Executing crawler for: baidu
+2026-02-23 09:33:58,065 [INFO] OmniCrawler.Baidu: Retrieved 51 items from Baidu
+2026-02-23 09:33:58,067 [INFO] OmniCrawler: Successfully saved 51 items for baidu to data/baidu_2026-02-23_0933.json
+2026-02-23 09:33:58,067 [INFO] OmniCrawler: Top entry for baidu: 习近平致电祝贺金正恩
+2026-02-23 09:33:58,067 [INFO] OmniCrawler: Executing crawler for: reddit
+2026-02-23 09:33:58,876 [INFO] OmniCrawler.Reddit: Retrieved 25 items from Reddit
+2026-02-23 09:33:58,879 [INFO] OmniCrawler: Successfully saved 25 items for reddit to data/reddit_2026-02-23_0933.json
+2026-02-23 09:33:58,879 [INFO] OmniCrawler: Top entry for reddit: Punch stood up for himself against a monkey that had been bullying him
+2026-02-23 09:33:58,879 [INFO] OmniCrawler: --- Omni-Crawler Session Complete ---

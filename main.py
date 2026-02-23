@@ -3,7 +3,7 @@ import logging
 import os
 from datetime import datetime
 import config
-from crawlers import zhihu, weibo, baidu, reddit
+from crawlers import zhihu, weibo, baidu, reddit, github, bilibili
 
 # Setup Logging
 log_filename = os.path.join(config.LOG_DIR, f"crawler_{datetime.now().strftime('%Y-%m-%d')}.log")
@@ -34,7 +34,9 @@ def main():
         {"name": "zhihu", "module": zhihu},
         {"name": "weibo", "module": weibo},
         {"name": "baidu", "module": baidu},
-        {"name": "reddit", "module": reddit}
+        {"name": "reddit", "module": reddit},
+        {"name": "github", "module": github},
+        {"name": "bilibili", "module": bilibili}
     ]
     
     for platform in platforms:

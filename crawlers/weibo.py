@@ -1,42 +1,65 @@
 import requests
 import logging
+from bs4 import BeautifulSoup
 
 logger = logging.getLogger("OmniCrawler.Weibo")
 
 def fetch():
-    """Fetches Weibo hot search list via mobile API."""
-    url = "https://m.weibo.cn/api/container/getIndex?containerid=106003type%3D25%26t%3D3%26disable_hot%3D1%26filter_type%3Drealtime"
+    """Fetches Weibo hot search list via PC web scraping (s.weibo.com)."""
+    url = "https://s.weibo.com/top/summary?cate=realtimehot"
     headers = {
-        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1",
-        "Referer": "https://m.weibo.cn/p/index?containerid=106003type%3D25%26t%3D3%26disable_hot%3D1%26filter_type%3Drealtime"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Referer": "https://weibo.com/",
+        "Accept-Language": "zh-CN,zh;q=0.9",
+        "Cookie": "SUB=_2AkMSY_pAf8NxqwFRmP8SyW_mbY12zwnEieKkqInJJRMxHRl-yT9kqm8StRB6O_Z_X_vX_Z_X_vX_Z_X_vX_Z;" # Placeholder/Minimal Cookie
     }
     
     try:
-        response = requests.get(url, headers=headers, timeout=10)
+        # Using a session to better manage headers
+        session = requests.Session()
+        response = session.get(url, headers=headers, timeout=15)
         response.raise_for_status()
-        data = response.json()
+        soup = BeautifulSoup(response.text, 'html.parser')
         
-        # Weibo API nested structure: data -> cards -> card_group
-        cards = data.get('data', {}).get('cards', [])
-        hot_card = next((c for c in cards if c.get('itemid') == 'hotword'), None)
-        
-        if not hot_card:
-            # Fallback to general group parsing if itemid doesn't match
-            group = cards[0].get('card_group', []) if cards else []
-        else:
-            group = hot_card.get('card_group', [])
-
-        results = []
-        for item in group:
-            desc = item.get('desc', '')
-            if not desc: continue
+        # Weibo uses a table structure for hot topics
+        table = soup.select_one('section.list table tbody')
+        if not table:
+            # Fallback to direct tbody if section not found
+            table = soup.select_one('tbody')
             
-            results.append({
-                "title": desc,
-                "url": item.get('scheme', ''),
-                "hot_score": item.get('desc_extr', 'N/A'),
-                "excerpt": "" # Weibo API at this level doesn't provide excerpts
-            })
+        if not table:
+            logger.error("Could not find Weibo hot list table")
+            return []
+
+        rows = table.find_all('tr')
+        results = []
+        
+        for row in rows:
+            td_rank = row.select_one('.td-01')
+            td_content = row.select_one('.td-02')
+            
+            if not td_rank or not td_content:
+                continue
+                
+            rank = td_rank.text.strip()
+            link_el = td_content.select_one('a')
+            score_el = td_content.select_one('span')
+            
+            # Skip the 'top' ad or fixed items that don't have a numerical rank
+            if not rank.isdigit() and rank != "":
+                continue
+                
+            if link_el:
+                title = link_el.text.strip()
+                href = link_el.get('href', '')
+                url = f"https://s.weibo.com{href}" if href.startswith('/') else href
+                
+                results.append({
+                    "title": title,
+                    "url": url,
+                    "hot_score": score_el.text.strip() if score_el else "N/A",
+                    "excerpt": ""
+                })
         
         logger.info(f"Retrieved {len(results)} items from Weibo")
         return results
