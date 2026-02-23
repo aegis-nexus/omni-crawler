@@ -81,3 +81,38 @@
 2026-02-23 09:38:02,108 [INFO] OmniCrawler: Successfully saved 20 items for bilibili to data/bilibili_2026-02-23_0938.json
 2026-02-23 09:38:02,108 [INFO] OmniCrawler: Top entry for bilibili: 《明日方舟：终末地》干员叙事 [伊冯：完美笑容算法]
 2026-02-23 09:38:02,108 [INFO] OmniCrawler: --- Omni-Crawler Session Complete ---
+2026-02-23 09:41:06,115 [INFO] OmniCrawler: --- Starting Omni-Crawler Session ---
+2026-02-23 09:41:06,115 [INFO] OmniCrawler: Executing crawler for: zhihu
+2026-02-23 09:41:06,262 [WARNING] OmniCrawler.Zhihu: Zhihu Main API requires auth, falling back to search API
+2026-02-23 09:41:06,522 [INFO] OmniCrawler.Zhihu: Retrieved 10 items from Zhihu
+2026-02-23 09:41:06,524 [INFO] OmniCrawler: Successfully saved 10 items for zhihu to data/zhihu_2026-02-23_0941.json
+2026-02-23 09:41:06,524 [INFO] OmniCrawler: Top entry for zhihu: 多地气温断崖式下跌
+2026-02-23 09:41:06,525 [INFO] OmniCrawler: Executing crawler for: weibo
+2026-02-23 09:41:06,768 [INFO] OmniCrawler.Weibo: Retrieved 51 items from Weibo
+2026-02-23 09:41:06,770 [INFO] OmniCrawler: Successfully saved 51 items for weibo to data/weibo_2026-02-23_0941.json
+2026-02-23 09:41:06,770 [INFO] OmniCrawler: Top entry for weibo: 习近平致电祝贺金正恩
+2026-02-23 09:41:06,771 [INFO] OmniCrawler: Executing crawler for: baidu
+2026-02-23 09:41:07,108 [INFO] OmniCrawler.Baidu: Retrieved 51 items from Baidu
+2026-02-23 09:41:07,110 [INFO] OmniCrawler: Successfully saved 51 items for baidu to data/baidu_2026-02-23_0941.json
+2026-02-23 09:41:07,111 [INFO] OmniCrawler: Top entry for baidu: 习近平致电祝贺金正恩
+2026-02-23 09:41:07,111 [INFO] OmniCrawler: Executing crawler for: reddit
+2026-02-23 09:41:08,153 [INFO] OmniCrawler.Reddit: Retrieved 25 items from Reddit
+2026-02-23 09:41:08,155 [INFO] OmniCrawler: Successfully saved 25 items for reddit to data/reddit_2026-02-23_0941.json
+2026-02-23 09:41:08,156 [INFO] OmniCrawler: Top entry for reddit: Punch stood up for himself against a monkey that had been bullying him
+2026-02-23 09:41:08,156 [INFO] OmniCrawler: Executing crawler for: github
+2026-02-23 09:41:10,506 [INFO] OmniCrawler.GitHub: Retrieved 9 items from GitHub Trending
+2026-02-23 09:41:10,508 [INFO] OmniCrawler: Successfully saved 9 items for github to data/github_2026-02-23_0941.json
+2026-02-23 09:41:10,508 [INFO] OmniCrawler: Top entry for github: huggingface/skills
+2026-02-23 09:41:10,508 [INFO] OmniCrawler: Executing crawler for: bilibili
+2026-02-23 09:41:10,605 [INFO] OmniCrawler.Bilibili: Retrieved 20 items from Bilibili
+2026-02-23 09:41:10,608 [INFO] OmniCrawler: Successfully saved 20 items for bilibili to data/bilibili_2026-02-23_0941.json
+2026-02-23 09:41:10,608 [INFO] OmniCrawler: Top entry for bilibili: 《明日方舟：终末地》干员叙事 [伊冯：完美笑容算法]
+2026-02-23 09:41:10,608 [INFO] OmniCrawler: Executing crawler for: toutiao
+2026-02-23 09:41:10,803 [INFO] OmniCrawler.Toutiao: Retrieved 50 items from Toutiao
+2026-02-23 09:41:10,806 [INFO] OmniCrawler: Successfully saved 50 items for toutiao to data/toutiao_2026-02-23_0941.json
+2026-02-23 09:41:10,806 [INFO] OmniCrawler: Top entry for toutiao: “大聪明”们半夜出发全堵高速上了
+2026-02-23 09:41:10,806 [INFO] OmniCrawler: Executing crawler for: hackernews
+2026-02-23 09:41:23,257 [INFO] OmniCrawler.HackerNews: Retrieved 20 items from Hacker News
+2026-02-23 09:41:23,261 [INFO] OmniCrawler: Successfully saved 20 items for hackernews to data/hackernews_2026-02-23_0941.json
+2026-02-23 09:41:23,261 [INFO] OmniCrawler: Top entry for hackernews: Sub-$200 Lidar could reshuffle auto sensor economics
+2026-02-23 09:41:23,261 [INFO] OmniCrawler: --- Omni-Crawler Session Complete ---
